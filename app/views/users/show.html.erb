@@ -6,4 +6,14 @@
       <%= render @posts %>
     </ul>
   </article>
+
+  <h3>Friends</h3>
+  <% @friends.uniq.each do |friend| %>
+  	<p><%= friend.name %></p>
+  <% end %>
+
+  <h3>Friend Requests</h3>
+  <% @friend_requests.uniq.each do |friend| %>
+  	<p><%= friend.name %></p>
+  <% end %>
 </section>
