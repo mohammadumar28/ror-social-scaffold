@@ -15,5 +15,7 @@
   <h3>Friend Requests</h3>
   <% @friend_requests.uniq.each do |friend| %>
   	<p><%= friend.name %></p>
+    <%= link_to 'Accept', user_friendship_path(friend.id), method: :patch%>
+    <%= link_to 'Reject', user_friendship_path(friend.id), method: :delete%>
   <% end %>
 </section>
