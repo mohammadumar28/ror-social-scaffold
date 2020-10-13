@@ -1,16 +1,25 @@
 <section class="user-section">
-  <h2><%= "Name: #{@user.name}" %></h2>
+  <h2 class="text-center">
+    <em><%= "#{@user.name}" %></em>
+  </h2>  
+
+  <h4>My Friends</h4>
+  <% @friends.uniq.each do |friend| %>
+  	<p>
+      <%= friend.name %>
+      <small>
+        <%= link_to 'See Profile',  user_path(friend), 
+        class: 'text-info font-weight-light' %>
+      </small>
+    </p>
+  <% end %>
+
   <article class="timeline">
-    <h3>Recent posts:</h3>
+    <h4>My Posts</h4>
     <ul class="posts">
       <%= render @posts %>
     </ul>
   </article>
-
-  <h3>Friends</h3>
-  <% @friends.uniq.each do |friend| %>
-  	<p><%= friend.name %></p>
-  <% end %>
 
   <%= friend_request(@user, @friend_requests) %>
   <%= friend_inv(@user) %>
