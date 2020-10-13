@@ -12,7 +12,6 @@ class User < ApplicationRecord
   has_many :friendships
   has_many :inverse_friendships, class_name: 'Friendship', foreign_key: :friend_id
 
-
   def friends
     friends = []
     friendships.each { |friendship| friends << friendship.friend if friendship.confirmed }
@@ -22,18 +21,18 @@ class User < ApplicationRecord
 
   def pending_friends
     friends = []
-    friendships.each { |friendship| friends << friendship.friend if !friendship.confirmed }
+    friendships.each { |friendship| friends << friendship.friend unless friendship.confirmed }
     friends.compact
   end
 
   def friend_requests
     friends = []
-    inverse_friendships.each { |friendship| friends << friendship.user if !friendship.confirmed }
+    inverse_friendships.each { |friendship| friends << friendship.user unless friendship.confirmed }
     friends.compact
   end
 
   def confirm_friend(user)
-    friendship = inverse_friendships.find{ |friendship| friendship.user == user }
+    friendship = inverse_friendships.find { |friend| friend.user == user }
     friendship.confirmed = true
     friendship.save
   end
