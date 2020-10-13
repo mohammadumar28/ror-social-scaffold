@@ -1,6 +1,5 @@
 module UserHelper
 
-
   def friend_request(user, friend_requests)
     return unless current_user == user
       content_tag(:h3, "Friend Requests") +

@@ -6,10 +6,6 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 20 }
 
-  scope :pending_friends, -> { where(confirmed: false) }
-
-  scope :friend_requests, -> { where(user_id: params[:id], confirmed: false) }
-
   has_many :posts
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
