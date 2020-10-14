@@ -13,6 +13,8 @@
       </small>
     </p>
   <% end %>
+  <%= friend_request(@user, @friend_requests) %>
+  <%= friend_inv(@user) %>
 
   <article class="timeline">
     <h4>My Posts</h4>
@@ -20,7 +22,4 @@
       <%= render @posts %>
     </ul>
   </article>
-
-  <%= friend_request(@user, @friend_requests) %>
-  <%= friend_inv(@user) %>
 </section>

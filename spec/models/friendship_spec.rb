@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe Friendship, type: :model do
   before :each do
-    @user = User.create(id: 1, name: 'aldana', email: 'aldu@gmail.com')
-    @user2 = User.create(id: 2, name: 'Umar', email: 'umar@gmail.com')
-    @friend = Friendship.create(user_id: 1, friend_id: 2, confirmed: true)
-    @friend2 = Friendship.create(user_id: 2, friend_id: 1, confirmed: false)
+    @user = User.create(name: 'aldiii', email: 'aldu5678@mail.com', password: '123456', password_confirmation: '123456')
+    @user2 = User.create(name: 'umar', email: 'umar@mail.com', password: '123456', password_confirmation: '123456')
+    @friend = @user.friendships.build(friend_id: @user2.id, confirmed: true)
+    @friend2 = @user2.friendships.build(friend_id: @user.id, confirmed: false)
   end
 
   it { should belong_to(:user) }

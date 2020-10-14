@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Like, type: :model do
   before :each do
-    @user = User.create(id: 1, name: 'aldana', email: 'aldana@gmail.com')
-    @post = Post.create(id: 1, user_id: 1, content: 'This a post for testing')
-    @like = Like.create(id: 1, user_id: 1, post_id: 1)
+    @user = User.create(name: 'aldu', email: 'aldu123@mail.com', password: '123456', password_confirmation: '123456')
+    @post = Post.create(user_id: @user.id, content: 'hello, this a post for testing')
+    @like = Like.create(post_id: @post.id, user_id: @user.id)
   end
 
   it { should belong_to(:post) }
