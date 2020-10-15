@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap");
 
-$primary-color-dark: #689f38;
-$primary-color: #8bc34a;
-$primary-color-light: #dcedc8;
+$primary-color-dark: #a0e7e5;
+$primary-color: #b4f8c8;
+$primary-color-light: #444;
 $primary-color-text: #212121;
 $divider-color: #bdbdbd;
 
@@ -49,11 +49,11 @@ a {
   }
 
   .active a {
-    color: #fff;
+    color: #000;
   }
 
   a:hover {
-    color: #fff;
+    color: #444;
   }
 
   .menu {
@@ -286,9 +286,9 @@ form {
   }
 
   .profile-link {
-    font-size: 0.8em;
+    font-size: 0.83em;
     margin: 0 0 8px 0;
-    color: $primary-color-dark;
+    color: #585651;
   }
 }
 
