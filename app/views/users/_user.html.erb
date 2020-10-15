@@ -1,9 +1,7 @@
-<li class="card">
-  <div class="card-body">
-    <p><em><strong><%= user.name %></strong></em></p>
-    <div class="mb-2">
-      <%= link_to 'See Profile',  user_path(user), class: 'btn btn-outline-info btn-sm' %>
-    </div>
+<li>
+  <strong><%= user.name %></strong>
+  <span class="profile-link">
+    <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
     <%= friend_inv(user) %>
-  </div>
+  </span>
 </li>
