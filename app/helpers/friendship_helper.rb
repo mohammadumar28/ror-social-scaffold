@@ -4,9 +4,12 @@ module FriendshipHelper
 
     return if current_user.friends.include?(user)
 
-    return unless !current_user.friend_requests.include?(user) && !user.friend_requests.include?(current_user)
+    if !user.friend_requests.include?(current_user)
 
-    link_to('Send friendship invitation', user_friendships_url(user_id: current_user.id, friend_id: user),
-            method: :post, class: 'btn btn-primary')
+      link_to('Send friendship invitation', user_friendships_url(user_id: current_user.id, friend_id: user),
+              method: :post, class: 'btn btn-primary')
+    else
+      content_tag(:p, 'Friend request already sent.')
+    end
   end
 end
