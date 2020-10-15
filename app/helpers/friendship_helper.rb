@@ -8,8 +8,10 @@ module FriendshipHelper
 
       link_to('Send friendship invitation', user_friendships_url(user_id: current_user.id, friend_id: user),
               method: :post, class: 'btn btn-primary')
-    else
+    elsif user.friend_requests.include?(current_user)
       content_tag(:p, 'Friend request already sent.')
+    else
+      content_tag(:p, 'Sent you an invitation')
     end
   end
 end
