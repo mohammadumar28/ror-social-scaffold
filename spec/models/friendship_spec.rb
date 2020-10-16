@@ -4,8 +4,8 @@ RSpec.describe Friendship, type: :model do
   before :each do
     @user = User.create(name: 'aldiii', email: 'aldu5678@mail.com', password: '123456', password_confirmation: '123456')
     @user2 = User.create(name: 'umar', email: 'umar@mail.com', password: '123456', password_confirmation: '123456')
-    @friend = Friendship.create(user_id: @user.id, friend_id: @user2.id, confirmed: true)
-    @friend2 = Friendship.create(user_id: @user.id, friend_id: @user2.id, confirmed: false)
+    @friend = @user.friendships.build(friend_id: @user2.id, confirmed: true)
+    @friend2 = @user2.friendships.build(friend_id: @user.id, confirmed: false)
   end
 
   it { should belong_to(:user) }
@@ -16,6 +16,6 @@ RSpec.describe Friendship, type: :model do
   end
 
   it 'returns pending friends' do
-    expect(@user2.friend_requests.first).to eq(@user)
+    expect(@user2.pending_friends.first).to eq(@user)
   end
 end
