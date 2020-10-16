@@ -44,6 +44,7 @@ a {
 
   a {
     color: $primary-color-light;
+    text-transform: uppercase;
     font-weight: 900;
   }
 
@@ -152,7 +153,7 @@ form {
       border: 1px solid $divider-color;
       border-radius: 4px;
       padding: 8px;
-      background-color: white;
+      background-color: $primary-color-light;
     }
 
     input[type="checkbox"] {
@@ -173,6 +174,7 @@ form {
     border-radius: 4px;
     background-color: $primary-color-dark;
     color: $primary-color-light;
+    text-transform: uppercase;
     font-weight: 900;
   }
 
