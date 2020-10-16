@@ -6,8 +6,7 @@ class FriendshipsController < ApplicationController
 
   def update
     @friendship = Friendship.where(user_id: params[:user_id], friend_id: current_user.id).first
-    @friendship.confirmed = 'true'
-    @friendship.save
+    @friendship.confirm_friend
     redirect_to root_path
   end
 

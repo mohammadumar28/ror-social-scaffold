@@ -9,35 +9,9 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
-  has_many :friendships
-  has_many :inverse_friendships, class_name: 'Friendship', foreign_key: :friend_id
-
-  def friends
-    friends = []
-    friendships.each { |friendship| friends << friendship.friend if friendship.confirmed }
-    inverse_friendships.each { |friendship| friends << friendship.user if friendship.confirmed }
-    friends.compact
-  end
-
-  def pending_friends
-    friends = []
-    friendships.each { |friendship| friends << friendship.friend unless friendship.confirmed }
-    friends.compact
-  end
-
-  def friend_requests
-    friends = []
-    inverse_friendships.each { |friendship| friends << friendship.user unless friendship.confirmed }
-    friends.compact
-  end
-
-  def confirm_friend(user)
-    friendship = inverse_friendships.find { |friend| friend.user == user }
-    friendship.confirmed = true
-    friendship.save
-  end
-
-  def friend?(user)
-    friends.include?(user)
-  end
+  has_many :friendships, -> { where(confirmed: true) }, dependent: :destroy
+  has_many :friends, through: :friendships, source: :friend
+  has_many :inverse_friendships, -> { where(confirmed: false) },
+           class_name: 'Friendship', foreign_key: :friend_id, dependent: :destroy
+  has_many :friend_requests, through: :inverse_friendships, source: :user
 end
