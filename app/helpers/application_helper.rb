@@ -15,4 +15,9 @@ module ApplicationHelper
       link_to('Like!', post_likes_path(post_id: post.id), method: :post)
     end
   end
+
+  def request_btn(user)
+    link_to('Accept', user_friendship_path(user, user.id), method: :patch, class: 'btn btn-success btn-sm mr-2') +
+      link_to('Reject', user_friendship_path(user, user.id), method: :delete, class: 'btn btn-danger btn-sm')
+  end
 end

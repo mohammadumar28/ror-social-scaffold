@@ -11,7 +11,8 @@ module FriendshipHelper
     elsif user.friend_requests.include?(current_user)
       content_tag(:div, 'Friend request already sent.', class: 'badge badge-info text-wrap')
     else
-      content_tag(:div, 'Sent you an invitation', class: 'badge badge-warning text-wrap')
+      content_tag(:div, 'Sent you an invitation', class: 'badge badge-warning text-wrap mr-2') +
+        request_btn(user)
     end
   end
 end
