@@ -1,7 +1,9 @@
 describe 'Friendship Process', type: :feature do
   before :each do
-    @user = User.create(name: 'aldiii123', email: 'aldu234@exam.com', password: '123456', password_confirmation: '123456')
-    @friend = User.create(name: 'haashir1234', email: 'haashir34354@exam.com', password: '123456', password_confirmation: '123456')
+    @user = User.create(name: 'aldiii123', email: 'aldu234@exam.com',
+                        password: '123456', password_confirmation: '123456')
+    @friend = User.create(name: 'haashir1234', email: 'haashir34354@exam.com',
+                          password: '123456', password_confirmation: '123456')
   end
 
   it 'Send Friendship' do
