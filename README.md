@@ -1,6 +1,6 @@
 # Social Media App
 
-> A social media application with friendships and like features.
+> A Social Media app with friendships and like features.
 
 ![screeshot](./public/screenshot.png)
 
