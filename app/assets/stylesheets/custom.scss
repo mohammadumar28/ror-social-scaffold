@@ -44,7 +44,6 @@ a {
 
   a {
     color: $primary-color-light;
-    text-transform: uppercase;
     font-weight: 900;
   }
 
@@ -57,7 +56,7 @@ a {
   }
 
   .menu {
-    width: 79%;
+    width: 80%;
     justify-content: space-between;
 
     .menu-item {
@@ -153,7 +152,7 @@ form {
       border: 1px solid $divider-color;
       border-radius: 4px;
       padding: 8px;
-      background-color: $primary-color-light;
+      background-color: white;
     }
 
     input[type="checkbox"] {
@@ -174,7 +173,6 @@ form {
     border-radius: 4px;
     background-color: $primary-color-dark;
     color: $primary-color-light;
-    text-transform: uppercase;
     font-weight: 900;
   }
 

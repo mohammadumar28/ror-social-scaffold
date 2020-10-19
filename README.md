@@ -1,16 +1,41 @@
-# Scaffold for social media app with Ruby on Rails
+# Social Media App
 
-> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
+> A social media application with friendships and like features.
+
+![screeshot](./public/screenshot.png)
 
 ## Built With
 
-- Ruby v2.7.0
-- Ruby on Rails v5.2.4
+- Ruby v2.7.1
+- Ruby on Rails
+- Bootstrap
+- RSpec
+- Sass
+
+## Features
+
+### As a Guest User:
+
+* I want to be able to create account/log in.
+* I can see only “Sign in” and “Sign out” page.
+
+### As a Logged-in User:
+
+* I want to be able to see all users list.
+* I want to be able to see selected user page with their user name and all posts written by them (the most recent posts on the top).
+* I want to be able to send a friendship invitation.
+* I want to see a button “Invite to friendship” next to the name of user who is not my friend yet - on both users’ list and single user page.
+* I want to be able to see pending friendship invitations sent to me from other users.
+* I want to be able to accept or reject friendships invitation.
+* I want to be able to create new posts (text only).
+* I want to be able to like/dislike posts (but I can like single post only once).
+* I want to be able to add comments to posts.
+* I want to be able to see “Timeline” page with posts (with number of likes and comments) written by me and all my friends (the most recent posts on the top).
+Timeline page should be the root page of the app.
 
 ## Live Demo
 
-TBA
-
+- [Live link](https://warm-sea-85878.herokuapp.com/)
 
 ## Getting Started
 
@@ -18,9 +43,9 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-Ruby: 2.6.3
-Rails: 5.2.3
-Postgres: >=9.5
+- Ruby: 2.7.1
+- Rails: 5.2.4
+- Postgres: >=9.5
 
 ### Setup
 
@@ -37,16 +62,6 @@ Setup database with:
    rails db:migrate
 ```
 
-### Github Actions
-
-To make sure the linters' checks using Github Actions work properly, you should follow the next steps:
-
-1. On your recently forked repo, enable the GitHub Actions in the Actions tab.
-2. Create the `feature/branch` and push.
-3. Start working on your milestone as usual.
-4. Open a PR from the `feature/branch` when your work is done.
-
-
 ### Usage
 
 Start server with:
@@ -60,34 +75,35 @@ Open `http://localhost:3000/` in your browser.
 ### Run tests
 
 ```
-    rpsec --format documentation
+    rpsec
 ```
-
-> Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
 
 ### Deployment
 
-TBA
+- Heroku
 
 ## Authors
 
-TBA
+**Muhammad Umar**
+- Github: [@mohammadumar28](https://github.com/mohammadumar28)
+- LinkedIn: [Mohammad Umar](https://www.linkedin.com/in/mohammadumar28/)
+- Twitter: [@Mohammadumar28](https://twitter.com/Mohammadumar28)
+- Email: [mohammadumar28@gmail.com](mailto:mohammadumar28@gmail.com)
 
-## 🤝 Contributing
+**Aldana Longhi**
+- Github: [@AlduLonghi](https://github.com/AlduLonghi)
+- Linkedin: [Aldana Abril Longhi](https://www.linkedin.com/in/aldana-abril-longhi-a842ba1a7/)
+- Twitter: [@AbrilLonghi](https://twitter.com/AbrilLonghi)
+- Email [aldulonghi@gmail.com](mailto:aldulonghi@gmail.com)
 
-Contributions, issues and feature requests are welcome!
+## Acknowledgements
 
-Feel free to check the [issues page](issues/).
+* [Microverse](https://microverse.org)
 
-## Show your support
+## Contribution
 
-Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-TBA
-
-## 📝 License
-
-TBA
-
+* Fork this repo.
+* Create your feature branch `git checkout -b my-new-feature`.
+* Commit your changes `git commit -am "Add some feature"`.
+* Push to the branch `git push origin my-new-feature`.
+* Create a new Pull Request.
